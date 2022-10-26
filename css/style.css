@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #F3F3F3;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+
+    background-color: #FFFFFF;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.08);
+    z-index: 1;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 90%;
+    margin: 0 auto;
+}
+
+nav ion-icon {
+    font-size: 45px;
+}
+
+main {
+    margin-top: 100px;
+}
+
+.div-message {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 0 auto;
+
+    height: 40px;
+    
+    margin-bottom: 4px;
+    border-radius: 2px;
+}
+
+.entry,.exit {
+    background-color: #DCDCDC;
+}
+
+.private {
+    background-color: #FFDEDE;
+}
+
+.div-message span {
+    font-size: 14px;
+    margin-right: 4px
+}
+
+.time-msg {
+    color: #AAAAAA;
+    font-weight: 400;
+}
+
+.name {
+    font-weight: 700;
+}
+
+.msg {
+    font-weight: 400;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+
+    background-color: #FFFFFF;
+    box-shadow: 0px -4px 6px rgba(0,0,0,0.08);
+    z-index: 1;
+}
+
+.div-input-message {
+    display: flex;
+    justify-content: space-between;
+
+    width: 90%;
+    margin: 0 auto;
+}
+
+.input-message {
+    width: 80%;
+    border: none;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.input-message::placeholder {
+    color: #000000;
+    font-style: italic;
+}
+
+.div-input-message ion-icon {
+    font-size: 26px
+}
