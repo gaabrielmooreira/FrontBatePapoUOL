@@ -38,6 +38,7 @@ nav ion-icon {
 
 main {
     margin-top: 100px;
+    margin-bottom: 100px;
 }
 
 .div-message {
@@ -53,31 +54,27 @@ main {
     border-radius: 2px;
 }
 
-.entry,.exit {
+.div-message p {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.status-msg {
     background-color: #DCDCDC;
 }
 
-.private {
+.private-msg {
     background-color: #FFDEDE;
 }
 
-.div-message span {
-    font-size: 14px;
-    margin-right: 4px
-}
-
-.time-msg {
+.time {
     color: #AAAAAA;
-    font-weight: 400;
 }
 
-.name {
+.name,.from,.to {
     font-weight: 700;
 }
 
-.msg {
-    font-weight: 400;
-}
 
 footer {
     position: fixed;
