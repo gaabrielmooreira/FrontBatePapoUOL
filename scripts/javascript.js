@@ -134,3 +134,31 @@ function displayPrivateMsg(message) {
     }
 }
 
+function sendMsgRequestSuccess(resp){
+    console.log('O servidor recebeu a mensagem');
+    console.log(resp);
+    loadMessages();
+}
+
+function sendMsgRequestFail(erro){
+    alert('Você não conseguiu enviar uma mensagem');
+    console.log(erro);
+}
+
+function sendNormalMsg() {
+    const message = {
+        from: "Gabriel",
+        to: "Todos",
+        text: "",
+        type: "message",
+        time: ""
+    }
+    const text = document.querySelector('.input-message').value;
+    if(text !== ""){
+        message.text = text;
+        message.time = currentTime();
+        const promise = axios.post('https://mock-api.driven.com.br/api/v6/uol/messages',message);
+        promise.then(sendMsgRequestSuccess);
+        promise.catch(sendMsgRequestFail);
+    }
+}
