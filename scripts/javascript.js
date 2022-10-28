@@ -10,17 +10,29 @@ function currentTime(){
         );
 }
 
+const yourName = prompt("Qual seu lindo nome?");
+
 const userName = {
-    name:"Gabriel"
+    name: yourName
 };
 
-const ingressRoom = axios.post('https://mock-api.driven.com.br/api/v6/uol/participants', userName);
-ingressRoom.then(ingressSucess);
-ingressRoom.catch(ingressFail);
+function ingressRoom(){
+    const promise = axios.post('https://mock-api.driven.com.br/api/v6/uol/participants', userName);
+    promise.then(ingressSuccess);
+    promise.catch(ingressFail);
+}
 
-function ingressSucess(resposta){
+ingressRoom();
+
+function keepInTheRoom(){
+    axios.post('https://mock-api.driven.com.br/api/v6/uol/status', userName);
+}
+
+setInterval(keepInTheRoom, 5000);
+
+function ingressSuccess(resp){
     console.log("Entrou com sucesso");
-    console.log(resposta);
+    console.log(resp);
 }
 
 function ingressFail(erro){
@@ -32,20 +44,20 @@ let chatMessages = [];
 
 function loadMessages(){
     const promise = axios.get('https://mock-api.driven.com.br/api/v6/uol/messages');
-    promise.then(deuCerto);
-    promise.catch(deuErrado);
+    promise.then(loadMsgSuccess);
+    promise.catch(loadMsgFail);
 }
 
 setInterval(loadMessages, 3000);
 
-function deuCerto(resposta){
+function loadMsgSuccess(resp){
     console.log("Carregou com sucesso");
-    console.log(resposta);
-    chatMessages = resposta.data;
+    console.log(resp);
+    chatMessages = resp.data;
     displayMessages();
 }
 
-function deuErrado(erro){
+function loadMsgFail(erro){
     console.log(erro);
     console.log("Não carregou");
 }
