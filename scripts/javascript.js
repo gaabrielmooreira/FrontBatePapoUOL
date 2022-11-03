@@ -85,7 +85,7 @@ function displayMessages(){
 function displayStatusMsg(message) {
     chat.innerHTML+= `
     <div class="status-msg">
-        <div class="div-message">
+        <div class="div-message" data-test="message">
             <p>
                 <span class="time">(${message.time}) </span>
                 <span class="name">${message.from} </span>
@@ -101,7 +101,7 @@ function displayStatusMsg(message) {
 function displayNormalMsg(message) {
     chat.innerHTML+=`
     <div class="normal-msg">
-        <div class="div-message">
+        <div class="div-message" data-test="message">
             <p>
                 <span class="time">(${message.time}) </span>
                 <span class="from">${message.from} </span>
@@ -119,7 +119,7 @@ function displayPrivateMsg(message) {
     if (message.to === userName.name){
         chat.innerHTML+=`
         <div class="private-msg">
-            <div class="div-message">
+            <div class="div-message" data-test="message">
                 <p>
                     <span class="time">(${message.time}) </span>
                     <span class="from">${message.from} </span>
