@@ -147,7 +147,7 @@ function sendMsgRequestFail(erro){
 
 function sendNormalMsg() {
     const message = {
-        from: "Gabriel",
+        from: yourName,
         to: "Todos",
         text: "",
         type: "message",
@@ -157,8 +157,9 @@ function sendNormalMsg() {
     if(text !== ""){
         message.text = text;
         message.time = currentTime();
-        const promise = axios.post('https://mock-api.driven.com.br/api/v6/uol/messages',message);
-        promise.then(sendMsgRequestSuccess);
-        promise.catch(sendMsgRequestFail);
+
+        axios.post('https://mock-api.driven.com.br/api/v6/uol/messages',message)
+        .then(sendMsgRequestSuccess)
+        .catch(sendMsgRequestFail);
     }
 }
